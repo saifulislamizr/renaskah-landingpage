@@ -25,6 +25,7 @@ export default function LanguageSwitcher({
           <Link
             key={l}
             href={href}
+            prefetch={false}
             aria-current={active ? "page" : undefined}
             className={`flex min-h-11 items-center justify-center rounded-full px-3.5 font-medium transition-colors ${
               active ? "bg-ink-900 text-white" : "text-ink-500 hover:bg-ink-900/5"

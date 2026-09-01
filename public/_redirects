@@ -1,0 +1,6 @@
+# Cloudflare Pages static redirect.
+# The site has no bare "/" page (root layout lives at /ms and /en only) —
+# this used to be handled by src/proxy.ts (Next.js middleware), which
+# doesn't run in a static export. This is the static-hosting equivalent:
+# send "/" straight to the default locale.
+/ /ms 302

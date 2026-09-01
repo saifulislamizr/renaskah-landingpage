@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/locale";
 
+export const dynamic = "force-static";
+
 const SITE_URL = "https://renaskah.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {

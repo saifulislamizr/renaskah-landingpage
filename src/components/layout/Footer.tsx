@@ -18,7 +18,7 @@ export default function Footer({ locale, content }: { locale: Locale; content: S
     <footer className="border-t border-border bg-ink-950 text-ink-300">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16">
         <div className="sm:col-span-2 lg:col-span-1">
-          <Link href={`/${locale}`} className="inline-block">
+          <Link href={`/${locale}`} prefetch={false} className="inline-block">
             <Image
               src="/images/logo/renaskah-wordmark-white.png"
               alt="Renaskah, Proofreading & Formatting"

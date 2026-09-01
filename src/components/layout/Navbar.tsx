@@ -22,7 +22,7 @@ export default function Navbar({ locale, content }: { locale: Locale; content: S
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
       <nav className="container-page flex h-16 items-center justify-between gap-6 sm:h-20 lg:gap-4 xl:gap-10" aria-label="Main">
-        <Link href={`/${locale}`} className="flex shrink-0 items-center">
+        <Link href={`/${locale}`} prefetch={false} className="flex shrink-0 items-center">
           <Image
             src="/images/logo/renaskah-navbar-mark.png"
             alt="Renaskah, Proofreading & Formatting"
