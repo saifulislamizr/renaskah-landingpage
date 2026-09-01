@@ -1,0 +1,392 @@
+import type { SiteContent } from "./schema";
+import { testimonialItems } from "./testimonials-data";
+import { beforeAfterAsset } from "./before-after-data";
+import { pricingTable, formatTurnaroundMs } from "./pricing-data";
+
+const documentTypeOptions = [
+  "Tesis",
+  "Disertasi",
+  "Artikel Jurnal",
+  "Cadangan Penyelidikan (Research Proposal)",
+  "Proposal",
+  "Laporan",
+  "Buku",
+  "Manuskrip",
+];
+
+export const ms: SiteContent = {
+  seo: {
+    title: "Renaskah | Proofreading & Formatting Tesis Profesional",
+    description:
+      "Servis proofreading dan formatting profesional untuk tesis, jurnal, proposal, laporan dan manuskrip dalam Bahasa Melayu dan English. Harga penuh, terus terang.",
+    keywords: [
+      "proofreading tesis",
+      "proofreading tesis Malaysia",
+      "formatting tesis",
+      "proofreading Bahasa Melayu",
+      "academic proofreading Malaysia",
+      "English proofreading Malaysia",
+      "harga formatting tesis",
+    ],
+  },
+  nav: {
+    links: [
+      { label: "Formatting", href: "#formatting" },
+      { label: "Proofreading", href: "#proofreading" },
+      { label: "Harga", href: "#harga" },
+      { label: "Testimoni", href: "#testimoni" },
+      { label: "Cara Kerja", href: "#cara-kerja" },
+      { label: "Soalan Lazim", href: "#faq" },
+    ],
+    ctaLabel: "Semak Naskah Saya",
+  },
+  hero: {
+    eyebrow: "Proofreading & Formatting Akademik",
+    headline: {
+      lead: "Tesis Dah Siap, Tapi Masih Sangkut pada ",
+      keyword: "Formatting dan Proofreading",
+      tail: "?",
+    },
+    body: "Renaskah bantu selesaikan masalah bahasa dan format yang buat naskah anda belum bersedia untuk dihantar.",
+    ctaPrimary: "Semak Naskah Saya",
+    ctaSecondary: "WhatsApp Renaskah",
+    visualBadge: "Lihat Hasil Kerja Sebelum dan Selepas",
+    whatsappPrefill: "Hai Renaskah, saya ingin bertanya tentang servis Proofreading/Formatting.",
+  },
+  trustBar: {
+    sinceLabel: "Sejak 2015",
+    countValue: 300,
+    countSuffix: "+",
+    countLabel: "Tesis & Manuskrip Siap",
+    languagesLabel: "Bahasa Melayu & English",
+    urgentLabel: "Servis Urgent Tersedia",
+    urgentNote: "sehingga 3 jam*",
+    urgentDisclaimer:
+      "*Tempoh urgent bergantung kepada saiz dokumen, skop kerja, tahap kerumitan dan ketersediaan staf pada masa tersebut. Bukan jaminan untuk setiap kerja.",
+  },
+  problem: {
+    eyebrow: "Masalah Yang Kami Faham",
+    title: {
+      lead: "Kajian Dah Siap, Tapi Masih Pening dengan ",
+      keyword: "Naskah Anda",
+      tail: "?",
+    },
+    intro: "Bukan kandungan yang jadi masalah. Ini yang selalu berlaku sebelum submission:",
+    points: [
+      { lead: "Dah betulkan ", keyword: "page number", tail: ", bahagian lain pula berubah." },
+      { lead: "TOC dah ", keyword: "update", tail: ", tapi format lain pula lari." },
+      { lead: "Heading dan subheading ", keyword: "tak konsisten", tail: "." },
+      { lead: "Margin tak ikut ", keyword: "garis panduan universiti", tail: "." },
+      { lead: "Rujukan tak konsisten ", keyword: "format", tail: "." },
+      { lead: "Submission dah dekat, ", keyword: "dokumen", tail: " belum kemas." },
+    ],
+    bridge: { lead: "Mari kami bantu anda ", keyword: "selesaikan", tail: " masalah ini." },
+  },
+  documentTypeOptions,
+  formatting: {
+    id: "formatting",
+    eyebrow: "Servis Formatting",
+    headline: { lead: "Kami Bantu Susun dan Kemaskan ", keyword: "Formatting", tail: " Naskah Anda." },
+    outcome:
+      "Kami kemaskan struktur dan susun atur naskah anda ikut guideline universiti, jurnal atau penerbit, dari margin dan heading hierarchy sehingga rujukan dan senarai jadual. Anda tak perlu habiskan berjam-jam betulkan sendiri.",
+    unitLabel: "Per Muka Surat",
+    scopeToggleLabel: "Lihat Skop Penuh",
+    scopeTitle: "Skop Formatting",
+    scopeItems: [
+      "Margin",
+      "Font",
+      "Line spacing",
+      "Paragraph spacing",
+      "Indentation",
+      "Heading & subheading",
+      "Page numbering",
+      "Section breaks",
+      "Jadual (tables)",
+      "Rajah (figures)",
+      "Caption",
+      "Table of Contents",
+      "List of Tables",
+      "List of Figures",
+      "Format sitasi (citation)",
+      "Format rujukan (reference)",
+    ],
+    excludedTitle: "Tidak Termasuk",
+    excludedItems: [
+      "Muka surat atau kandungan baharu yang ditambah selepas kerja asal siap.",
+      "Perubahan besar selepas naskah asal disiapkan.",
+    ],
+    extraTitle: "Guideline Yang Kami Boleh Ikuti",
+    extraItems: ["APA 7", "Harvard", "IEEE", "Garis panduan universiti", "Garis panduan jurnal", "Format custom"],
+    note: "Revision formatting diteruskan sehingga requirement yang dipersetujui dipenuhi. Tidak termasuk kandungan baharu atau perubahan besar selepas kerja asal siap.",
+    tagsLabel: "Sesuai untuk:",
+    ctaLabel: "Saya Perlukan Formatting",
+  },
+  proofreading: {
+    id: "proofreading",
+    eyebrow: "Servis Proofreading",
+    headline: { lead: "Ayat Dah Ada. Kami Bantu Semak ", keyword: "Ejaan dan Tatabahasa", tail: " Anda." },
+    outcome:
+      "Kami semak ejaan, tatabahasa, tanda baca dan kejelasan ayat naskah anda dalam Bahasa Melayu atau English, tanpa ubah makna asal kandungan anda.",
+    unitLabel: "Per Perkataan",
+    scopeToggleLabel: "Lihat Skop Penuh",
+    scopeTitle: "Skop Proofreading",
+    scopeItems: [
+      "Ejaan",
+      "Tatabahasa",
+      "Tanda baca",
+      "Kesalahan menaip",
+      "Struktur ayat asas",
+      "Kejelasan ayat",
+      "Konsistensi istilah",
+      "Konsistensi gaya bahasa",
+    ],
+    excludedTitle: "Tidak Termasuk Dalam Proofreading Standard",
+    excludedItems: [
+      "Formatting & layout dokumen.",
+      "Fact-checking kandungan.",
+      "Penulisan semula secara menyeluruh (comprehensive rewriting).",
+    ],
+    extraTitle: "Bahasa",
+    extraItems: ["Bahasa Melayu", "English"],
+    tagsLabel: "Sesuai untuk:",
+    ctaLabel: "Saya Perlukan Proofreading",
+  },
+  beforeAfter: {
+    eyebrow: "Bukti, Bukan Janji",
+    title: { lead: "Ini ", keyword: "Contoh Hasil", tail: " yang Kami Berikan." },
+    intro: "Contoh sebenar naskah tesis sebelum dan selepas proses formatting oleh Renaskah. Seret untuk banding.",
+    disclaimer: "Dokumen contoh ini digunakan dengan kebenaran pemiliknya.",
+    sliderBeforeLabel: "Sebelum",
+    sliderAfterLabel: "Selepas",
+    jumpToLabel: "Lompat ke:",
+    pages: [
+      { label: "Isi Kandungan", pageNumber: 6 },
+      { label: "Senarai Jadual", pageNumber: 7 },
+      { label: "Heading Bab 1", pageNumber: 8 },
+      { label: "Kulit Depan", pageNumber: 1 },
+    ],
+    dragHandleLabel: "Seret untuk banding sebelum dan selepas",
+    fullViewerToggleLabel: "Lihat Dokumen Penuh",
+    examples: [
+      {
+        label: "Contoh Formatting Tesis",
+        description: "Perbandingan struktur, heading, spacing dan rujukan sebelum dan selepas formatting.",
+        beforeHref: beforeAfterAsset.beforeHref,
+        afterHref: beforeAfterAsset.afterHref,
+        beforeLabel: "Sebelum",
+        afterLabel: "Selepas",
+        isRealSample: beforeAfterAsset.isRealSample,
+      },
+    ],
+    placeholderNote: "Lebih banyak contoh before/after akan ditambah di sini.",
+    viewer: {
+      loading: "Memuatkan PDF…",
+      error: "Gagal memuatkan PDF. Sila cuba muat turun fail terus.",
+      pageLabel: "Muka Surat",
+      ofLabel: "daripada",
+      previousPage: "Muka surat sebelum",
+      nextPage: "Muka surat seterusnya",
+      zoomIn: "Zum masuk",
+      zoomOut: "Zum keluar",
+      zoomLevel: "Tahap zum",
+      fullscreen: "Skrin penuh",
+      exitFullscreen: "Keluar skrin penuh",
+      downloadBefore: "Muat Turun PDF Sebelum",
+      downloadAfter: "Muat Turun PDF Selepas",
+    },
+  },
+  universityExperience: {
+    eyebrow: "Pengalaman",
+    title: {
+      lead: "Kami Berpengalaman Menyiapkan Pelbagai Naskah daripada ",
+      keyword: "Universiti dan Institusi",
+      tail: " yang Berbeza.",
+    },
+    intro: "Sejak 2015, kami telah mengendalikan naskah dan tesis yang menggunakan format daripada pelbagai institusi, termasuk:",
+    disclaimer:
+      "Renaskah bukan rakan kongsi rasmi, tidak disahkan (endorsed) dan tidak mewakili mana-mana universiti yang disenaraikan. Senarai ini menggambarkan pengalaman mengendalikan format naskah sahaja.",
+    universities: ["UiTM", "UKM", "UPM", "UM", "UPNM", "UniKL", "UTM"],
+  },
+  testimonials: {
+    eyebrow: "Testimoni",
+    title: { lead: "", keyword: "Bukan Kami", tail: " Yang Cakap." },
+    intro: "Sebahagian daripada respons sebenar klien Renaskah melalui WhatsApp.",
+    disclaimer:
+      "Tangkapan skrin sebenar, digunakan dengan kebenaran klien. Nama, nombor telefon dan maklumat peribadi lain telah disamarkan.",
+    imageAlt: "Tangkapan skrin testimoni WhatsApp klien Renaskah, nama disamarkan",
+    items: testimonialItems,
+  },
+  whyRenaskah: {
+    eyebrow: "Kenapa Renaskah",
+    title: { lead: "Kenapa Ramai ", keyword: "Kembali", tail: " Menggunakan Perkhidmatan Renaskah?" },
+    intro: "Sokongan yang fokus kepada bahasa dan format sahaja. Kerja penyelidikan anda kekal menjadi milik anda sepenuhnya.",
+    points: [
+      {
+        title: "Familiar dengan Format Tesis",
+        description:
+          "Kami dah biasa dengan pelbagai format universiti. Masalah macam page numbering, TOC, heading, margin, table, figure dan reference memang antara perkara yang selalu kami urus.",
+      },
+      {
+        title: "Boleh Bantu Bila Deadline Dah Dekat",
+        description:
+          "Kalau tarikh hantar dah dekat, ada pilihan servis urgent. Untuk kes tertentu, kerja boleh disiapkan seawal 3 jam, bergantung pada jumlah kerja dan slot yang ada.",
+      },
+      {
+        title: "Kalau Format Masih Ada Isu, Boleh Betulkan Lagi",
+        description:
+          "Untuk servis Formatting, kalau masih ada masalah pada bahagian yang sama, kami boleh teruskan pembetulan selagi tidak melibatkan penambahan kandungan atau muka surat baharu.",
+      },
+      {
+        title: "BM dan English dalam Satu Tempat",
+        description:
+          "Tak perlu cari orang lain untuk bahasa yang berbeza. Proofreading Bahasa Melayu dan English boleh dibuat dengan kami, manakala Formatting pula boleh mengikut guideline universiti atau jurnal yang diperlukan.",
+      },
+    ],
+  },
+  pricing: {
+    eyebrow: "Tengok Harga Dulu, Baru Buat Keputusan",
+    title: { lead: "Berapa ", keyword: "Kosnya", tail: "?" },
+    intro: "Kami letak terus senarai harga supaya senang anda kira dan banding ikut tempoh yang diperlukan.",
+    proofreading: {
+      serviceLabel: "Proofreading",
+      unitLabel: "Per Perkataan",
+      turnaroundLabel: "Tempoh Siap",
+      rateLabel: "Kadar",
+      standardGroupLabel: "Tempoh",
+      urgentGroupLabel: "Urgent",
+      tiers: pricingTable.map((row) => ({
+        turnaround: formatTurnaroundMs(row),
+        rate: row.proofreadingRate,
+        group: row.group,
+      })),
+      ctaLabel: "Dapatkan Sebut Harga Proofreading",
+    },
+    formatting: {
+      serviceLabel: "Formatting",
+      unitLabel: "Per Muka Surat",
+      turnaroundLabel: "Tempoh Siap",
+      rateLabel: "Kadar",
+      standardGroupLabel: "Tempoh",
+      urgentGroupLabel: "Urgent",
+      tiers: pricingTable.map((row) => ({
+        turnaround: formatTurnaroundMs(row),
+        rate: row.formattingRate,
+        group: row.group,
+      })),
+      ctaLabel: "Dapatkan Sebut Harga Formatting",
+    },
+    depositNote: "Deposit 50% sebelum kerja bermula.",
+    urgentCaveat: "Tempoh urgent tertakluk kepada saiz dokumen, beban kerja, tahap kerumitan dan ketersediaan pada masa enquiry.",
+    currencyNote: "Harga dalam Ringgit Malaysia (RM). Tertakluk kepada semakan dari semasa ke semasa.",
+  },
+  howItWorks: {
+    eyebrow: "Prosesnya Mudah",
+    title: { lead: "", keyword: "6 Langkah", tail: " Sampai Naskah Siap." },
+    intro: "Dari hantar maklumat hingga dokumen siap, semuanya ikut langkah yang jelas.",
+    steps: [
+      { title: "Pilih Servis", description: "Proofreading atau Formatting." },
+      { title: "Masukkan Maklumat", description: "Jenis dokumen, jumlah perkataan atau muka surat, tarikh siap." },
+      { title: "Semak Harga", description: "Rujuk harga penuh di atas atau dapatkan sebut harga tepat." },
+      { title: "WhatsApp Renaskah", description: "Hantar borang, terus ke WhatsApp." },
+      { title: "Deposit 50%", description: "Kerja bermula sebaik deposit diterima." },
+      { title: "Kerja Bermula", description: "Naskah anda disiapkan mengikut skop yang dipersetujui." },
+    ],
+  },
+  quoteForm: {
+    eyebrow: "Dapatkan Sebut Harga",
+    title: { lead: "Hantar Naskah Anda. Kami ", keyword: "Uruskan Selebihnya", tail: "." },
+    intro: "Pilih servis, isi maklumat dokumen, dan hantar terus melalui WhatsApp. Kami akan balas dengan sebut harga.",
+    serviceToggleLabel: "Pilih Servis",
+    proofreadingTab: "Proofreading",
+    formattingTab: "Formatting",
+    fields: {
+      name: { label: "Nama", placeholder: "Nama penuh anda" },
+      documentType: { label: "Jenis Dokumen", placeholder: "cth: Tesis Sarjana" },
+      language: { label: "Bahasa Dokumen", options: ["Bahasa Melayu", "English"] },
+      wordCount: { label: "Jumlah Perkataan", placeholder: "cth: 15000", helper: "Anggaran jumlah perkataan keseluruhan dokumen." },
+      pageCount: { label: "Jumlah Muka Surat", placeholder: "cth: 120", helper: "Anggaran jumlah muka surat keseluruhan dokumen." },
+      institution: { label: "Universiti / Jurnal", placeholder: "cth: Universiti Teknologi MARA" },
+      guideline: { label: "Guideline / Format", placeholder: "cth: APA 7, Harvard, format universiti" },
+      dueDate: { label: "Tarikh Perlu Siap", helper: "Pilih tarikh siap yang anda perlukan." },
+      notes: { label: "Catatan Tambahan", placeholder: "Sebarang keperluan khusus (pilihan)" },
+    },
+    requiredError: "Ruangan ini wajib diisi.",
+    submitLabel: "Hantar Ke WhatsApp",
+    privacyNote: "Maklumat ini hanya digunakan untuk menjana mesej WhatsApp kepada Renaskah. Tiada data disimpan di server kami.",
+  },
+  faq: {
+    eyebrow: "Soalan Lazim",
+    title: "Soalan Lazim",
+    items: [
+      {
+        question: "Apa beza Proofreading dan Formatting?",
+        answer:
+          "Proofreading fokus kepada bahasa: ejaan, tatabahasa, tanda baca dan kejelasan ayat, dikira mengikut jumlah perkataan. Formatting fokus kepada struktur dan susun atur dokumen: heading, spacing, page numbering, jadual dan rujukan, dikira mengikut jumlah muka surat. Kedua-duanya adalah servis berasingan.",
+      },
+      {
+        question: "Bolehkah saya mohon kedua-dua servis sekali?",
+        answer:
+          "Boleh. Hantar dua enquiry berasingan, satu untuk Proofreading dan satu untuk Formatting, supaya skop dan sebut harga jelas untuk setiap satu.",
+      },
+      {
+        question: "Berapa lama proses siap?",
+        answer:
+          "Tempoh siap bergantung kepada saiz dokumen, skop kerja dan ketersediaan staf pada masa tersebut. Rujuk jadual harga di atas untuk anggaran tempoh dan kadar. Sila nyatakan tarikh perlu siap semasa mohon sebut harga.",
+      },
+      {
+        question: "Kenapa harga dipaparkan mengikut tempoh siap?",
+        answer:
+          "Kerja urgent memerlukan susunan jadual kerja yang berbeza. Kadar naik mengikut tempoh siap yang lebih singkat, ini dipaparkan penuh supaya anda boleh rancang lebih awal.",
+      },
+      {
+        question: "Adakah formatting termasuk semakan bahasa?",
+        answer:
+          "Tidak secara automatik. Formatting standard fokus kepada struktur dan susun atur. Jika anda perlukan kedua-dua bahasa dan format dikemas, maklumkan kepada kami supaya kami boleh cadangkan skop yang sesuai.",
+      },
+      {
+        question: "Berapa kali revision formatting dibenarkan?",
+        answer:
+          "Revision formatting diteruskan sehingga requirement yang dipersetujui dipenuhi. Ini tidak termasuk muka surat atau kandungan baharu, atau perubahan besar selepas kerja asal siap.",
+      },
+      {
+        question: "Adakah maklumat dokumen saya sulit?",
+        answer: "Ya. Dokumen dan maklumat anda digunakan semata-mata untuk menyiapkan kerja yang anda mohon.",
+      },
+    ],
+  },
+  finalCta: {
+    title: {
+      lead: "Penulisan dan Kajian Anda Sudah Sejauh Ini. Jangan Biar Sangkut di ",
+      keyword: "Formatting dan Proofreading",
+      tail: " Sahaja.",
+    },
+    body: "Dapatkan sebut harga Proofreading atau Formatting hari ini. Terus melalui WhatsApp.",
+    ctaPrimary: "Semak Naskah Saya",
+    ctaSecondary: "WhatsApp Renaskah",
+  },
+  footer: {
+    description: "Renaskah bantu selesaikan masalah bahasa dan format naskah akademik dan profesional anda, dalam Bahasa Melayu dan English.",
+    servicesTitle: "Servis",
+    services: ["Formatting", "Proofreading"],
+    quickLinksTitle: "Pautan Pantas",
+    quickLinks: [
+      { label: "Formatting", href: "#formatting" },
+      { label: "Proofreading", href: "#proofreading" },
+      { label: "Harga", href: "#harga" },
+      { label: "Testimoni", href: "#testimoni" },
+      { label: "Cara Kerja", href: "#cara-kerja" },
+      { label: "Soalan Lazim", href: "#faq" },
+    ],
+    contactTitle: "Hubungi Kami",
+    languagesLabel: "Bahasa: Bahasa Melayu & English",
+    legalName: "Reka Naskah Enterprise",
+    regNo: "No. Pendaftaran: 202003178667 (CT0074367-H)",
+    copyright: "Renaskah. Hak cipta terpelihara.",
+  },
+  misc: {
+    skipToContent: "Langkau ke kandungan utama",
+    whatsappFloatingLabel: "WhatsApp Renaskah",
+    languageSwitcherLabel: "Bahasa",
+    backToTop: "Kembali ke atas",
+  },
+};
