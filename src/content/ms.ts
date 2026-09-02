@@ -49,7 +49,7 @@ export const ms: SiteContent = {
     },
     body: "Renaskah bantu selesaikan masalah bahasa dan format yang buat naskah anda belum bersedia untuk dihantar.",
     ctaPrimary: "Semak Naskah Saya",
-    ctaSecondary: "WhatsApp Renaskah",
+    ctaSecondary: "Senarai Harga",
     visualBadge: "Lihat Hasil Kerja Sebelum dan Selepas",
     whatsappPrefill: "Hai Renaskah, saya ingin bertanya tentang servis Proofreading/Formatting.",
   },

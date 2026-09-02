@@ -1,15 +1,12 @@
 import Image from "next/image";
 import type { SiteContent } from "@/content/schema";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
 import Button from "@/components/ui/Button";
 import HashLink from "@/components/ui/HashLink";
 import SlideReveal from "@/components/ui/SlideReveal";
 import HighlightedText from "@/components/ui/HighlightedText";
-import { WhatsAppIcon, ArrowRightIcon, ChevronRightIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, ChevronDownIcon, ChevronRightIcon } from "@/components/ui/icons";
 
 export default function Hero({ content }: { content: SiteContent }) {
-  const whatsappLink = buildWhatsAppLink(content.hero.whatsappPrefill);
-
   return (
     <section className="relative overflow-hidden border-b border-border">
       {/* Subtle brand watermark, the logo's ink identity used sparingly, not scattered */}
@@ -34,7 +31,7 @@ export default function Hero({ content }: { content: SiteContent }) {
             <Button href="#sebut-harga" variant="primary" size="lg" icon={<ArrowRightIcon className="h-5 w-5" />}>
               {content.hero.ctaPrimary}
             </Button>
-            <Button href={whatsappLink} external variant="secondary" size="lg" icon={<WhatsAppIcon className="h-5 w-5" />}>
+            <Button href="#harga" variant="secondary" size="lg" icon={<ChevronDownIcon className="h-5 w-5" />}>
               {content.hero.ctaSecondary}
             </Button>
           </div>

@@ -49,7 +49,7 @@ export const en: SiteContent = {
     },
     body: "Renaskah helps solve the language and formatting problems keeping your document from being ready to submit.",
     ctaPrimary: "Check My Document",
-    ctaSecondary: "WhatsApp Renaskah",
+    ctaSecondary: "Price List",
     visualBadge: "See Our Work, Before and After",
     whatsappPrefill: "Hi Renaskah, I'd like to ask about your Proofreading/Formatting service.",
   },
