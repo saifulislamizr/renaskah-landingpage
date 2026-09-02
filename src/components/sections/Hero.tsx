@@ -3,6 +3,7 @@ import type { SiteContent } from "@/content/schema";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import Button from "@/components/ui/Button";
 import HashLink from "@/components/ui/HashLink";
+import SlideReveal from "@/components/ui/SlideReveal";
 import HighlightedText from "@/components/ui/HighlightedText";
 import { WhatsAppIcon, ArrowRightIcon, ChevronRightIcon } from "@/components/ui/icons";
 
@@ -41,14 +42,18 @@ export default function Hero({ content }: { content: SiteContent }) {
 
         <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
           <div className="relative rounded-3xl border border-border bg-surface p-8 shadow-[0_20px_60px_-15px_rgba(20,20,30,0.15)] sm:p-10">
-            <Image
-              src="/images/logo/renaskah-monogram.png"
-              alt="Renaskah, Proofreading & Formatting"
-              width={400}
-              height={333}
-              className="mx-auto w-40 sm:w-48"
-              priority
-            />
+            <SlideReveal direction="left">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/hero/thesis-stack.jpg"
+                  alt="Tesis siap dijilid, sedia untuk dihantar"
+                  fill
+                  sizes="(min-width: 1024px) 35vw, 85vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </SlideReveal>
             <HashLink
               href="#before-after"
               className="mt-8 flex items-center justify-between rounded-xl border border-copper-200 bg-copper-50 px-4 py-3 text-sm font-semibold text-copper-700 transition-colors hover:bg-copper-100"

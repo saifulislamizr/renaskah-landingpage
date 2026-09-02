@@ -3,6 +3,7 @@ import type { SiteContent } from "@/content/schema";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HighlightedText from "@/components/ui/HighlightedText";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import SlideReveal from "@/components/ui/SlideReveal";
 
 export default function ProblemSection({ content }: { content: SiteContent }) {
   const { problem } = content;
@@ -34,7 +35,7 @@ export default function ProblemSection({ content }: { content: SiteContent }) {
           </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={150} className="order-first lg:order-none">
+        <SlideReveal direction="right" className="order-first lg:order-none">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border bg-surface shadow-[0_20px_60px_-15px_rgba(20,20,30,0.15)]">
             <Image
               src="/images/editorial/problem-visual.jpg"
@@ -42,11 +43,11 @@ export default function ProblemSection({ content }: { content: SiteContent }) {
               aria-hidden="true"
               fill
               sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-cover object-[78%_22%]"
+              className="object-cover"
               priority={false}
             />
           </div>
-        </ScrollReveal>
+        </SlideReveal>
       </div>
     </section>
   );
