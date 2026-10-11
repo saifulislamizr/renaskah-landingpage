@@ -39,6 +39,7 @@ export const ms: SiteContent = {
       { label: "Soalan Lazim", href: "#faq" },
     ],
     ctaLabel: "Semak Naskah Saya",
+    ctaShortLabel: "Sebut Harga",
   },
   hero: {
     eyebrow: "Proofreading & Formatting Akademik",

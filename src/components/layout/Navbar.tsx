@@ -16,7 +16,8 @@ export default function Navbar({ locale, content }: { locale: Locale; content: S
   const whatsappLink = buildWhatsAppLink(
     locale === "ms"
       ? "Hai Renaskah, saya ada soalan tentang servis Proofreading/Formatting."
-      : "Hi Renaskah, I have a question about your Proofreading/Formatting service."
+      : "Hi Renaskah, I have a question about your Proofreading/Formatting service.",
+    "navbar"
   );
 
   return (
@@ -62,15 +63,20 @@ export default function Navbar({ locale, content }: { locale: Locale; content: S
           </Button>
         </div>
 
-        <button
-          type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-full text-ink-900 lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-1 lg:hidden">
+          <Button href="#sebut-harga" variant="primary" size="md" className="px-4">
+            {content.nav.ctaShortLabel}
+          </Button>
+          <button
+            type="button"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-ink-900"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {open && (

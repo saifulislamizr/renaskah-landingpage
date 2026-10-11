@@ -16,7 +16,14 @@ export function handleHashClick(e: MouseEvent<HTMLAnchorElement>, hash: string) 
 
   e.preventDefault();
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  // Wait two frames so anything the click closes (the mobile menu sits
+  // inside the sticky header) has collapsed before the target position
+  // is measured, otherwise the scroll overshoots by the menu's height.
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() =>
+      el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" })
+    )
+  );
   if (window.location.hash !== hash) {
     window.history.pushState(null, "", hash);
   }

@@ -7,6 +7,9 @@ import { getContent } from "@/content";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+import WhatsAppClickTracker from "@/components/layout/WhatsAppClickTracker";
+import Script from "next/script";
+import { GA_ID } from "@/lib/analytics";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -109,6 +112,15 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         </main>
         <Footer locale={locale as Locale} content={content} />
         <FloatingWhatsApp content={content} />
+        <WhatsAppClickTracker />
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","${GA_ID}");`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

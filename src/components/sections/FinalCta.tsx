@@ -5,7 +5,7 @@ import HighlightedText from "@/components/ui/HighlightedText";
 import { WhatsAppIcon, ArrowRightIcon } from "@/components/ui/icons";
 
 export default function FinalCta({ content }: { content: SiteContent }) {
-  const whatsappLink = buildWhatsAppLink(content.hero.whatsappPrefill);
+  const whatsappLink = buildWhatsAppLink(content.hero.whatsappPrefill, "final-cta");
 
   return (
     <section className="bg-ink-950 py-16 text-white sm:py-24">

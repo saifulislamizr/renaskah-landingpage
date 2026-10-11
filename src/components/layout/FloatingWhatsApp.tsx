@@ -10,7 +10,8 @@ import { WhatsAppIcon } from "@/components/ui/icons";
  */
 export default function FloatingWhatsApp({ content }: { content: SiteContent }) {
   const link = buildWhatsAppLink(
-    "Hai Renaskah, saya ingin bertanya tentang servis Proofreading/Formatting."
+    "Hai Renaskah, saya ingin bertanya tentang servis Proofreading/Formatting.",
+    "floating"
   );
 
   return (

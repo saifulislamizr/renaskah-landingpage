@@ -10,8 +10,34 @@ export const WHATSAPP_DISPLAY_NUMBER = "010-316 5172";
 /** International-format target used to build wa.me links. */
 export const WHATSAPP_TARGET_NUMBER = "60103165172";
 
-export function buildWhatsAppLink(message: string): string {
-  return `https://wa.me/${WHATSAPP_TARGET_NUMBER}?text=${encodeURIComponent(message)}`;
+/**
+ * Where on the site a WhatsApp enquiry started. It is appended to the
+ * message as "(Ref: web-<source>)" so staff can see which button
+ * brought the lead in, and analytics reads it back from the link.
+ */
+export type WhatsAppSource =
+  | "navbar"
+  | "floating"
+  | "footer"
+  | "final-cta"
+  | "borang-proofreading"
+  | "borang-formatting";
+
+const REF_PATTERN = /\(Ref: web-([a-z-]+)\)/;
+
+export function buildWhatsAppLink(message: string, source?: WhatsAppSource): string {
+  const text = source ? `${message}\n\n(Ref: web-${source})` : message;
+  return `https://wa.me/${WHATSAPP_TARGET_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+/** Reads the source tag back out of a wa.me link, or "unknown". */
+export function whatsAppSourceFromLink(href: string): string {
+  try {
+    const text = new URL(href).searchParams.get("text") ?? "";
+    return REF_PATTERN.exec(text)?.[1] ?? "unknown";
+  } catch {
+    return "unknown";
+  }
 }
 
 export interface ProofreadingQuoteInput {

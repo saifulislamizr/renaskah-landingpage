@@ -7,6 +7,7 @@ import {
   buildProofreadingMessage,
   buildWhatsAppLink,
 } from "@/lib/whatsapp";
+import { track } from "@/lib/analytics";
 import Field, { fieldInputClass } from "@/components/ui/Field";
 import HighlightedText from "@/components/ui/HighlightedText";
 import { ArrowRightIcon } from "@/components/ui/icons";
@@ -98,7 +99,8 @@ export default function QuoteForm({ content }: { content: SiteContent }) {
             notes: values.notes,
           });
 
-    window.open(buildWhatsAppLink(message), "_blank", "noopener,noreferrer");
+    track("generate_lead", { service });
+    window.open(buildWhatsAppLink(message, service === "proofreading" ? "borang-proofreading" : "borang-formatting"), "_blank", "noopener,noreferrer");
   }
 
   const tabBase =

@@ -11,7 +11,8 @@ export default function Footer({ locale, content }: { locale: Locale; content: S
   const whatsappLink = buildWhatsAppLink(
     locale === "ms"
       ? "Hai Renaskah, saya ingin bertanya tentang servis anda."
-      : "Hi Renaskah, I'd like to ask about your services."
+      : "Hi Renaskah, I'd like to ask about your services.",
+    "footer"
   );
 
   return (

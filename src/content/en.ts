@@ -39,6 +39,7 @@ export const en: SiteContent = {
       { label: "FAQ", href: "#faq" },
     ],
     ctaLabel: "Check My Document",
+    ctaShortLabel: "Get a Quote",
   },
   hero: {
     eyebrow: "Academic Proofreading & Formatting",

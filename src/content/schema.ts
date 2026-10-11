@@ -25,6 +25,8 @@ export interface HighlightedLine {
 export interface NavContent {
   links: { label: string; href: string }[];
   ctaLabel: string;
+  /** Shorter CTA that fits beside the menu button on mobile. */
+  ctaShortLabel: string;
 }
 
 export interface HeroContent {

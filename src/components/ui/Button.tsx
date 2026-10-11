@@ -40,21 +40,17 @@ type ButtonAsButton = CommonProps &
 type ButtonProps = ButtonAsLink | ButtonAsButton;
 
 export default function Button(props: ButtonProps) {
-  const { variant = "primary", size = "md", icon, className = "", children } = props;
+  // Take the styling props out first, so spreading the remaining DOM
+  // attributes can never overwrite the computed className.
+  const { variant = "primary", size = "md", icon, className = "", children, ...domProps } = props;
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  if ("href" in props && props.href) {
-    const { href, external, ...rest } = props as ButtonAsLink;
+  if ("href" in domProps && domProps.href) {
+    const { href, external, onClick, ...rest } = domProps as Omit<ButtonAsLink, keyof CommonProps>;
 
     if (external || href.startsWith("http") || href.startsWith("https://wa.me")) {
       return (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes}
-          {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
-        >
+        <a href={href} target="_blank" rel="noopener noreferrer" {...rest} className={classes} onClick={onClick}>
           {icon}
           {children}
         </a>
@@ -65,9 +61,12 @@ export default function Button(props: ButtonProps) {
       return (
         <a
           href={href}
+          {...rest}
           className={classes}
-          onClick={(e) => handleHashClick(e, href)}
-          {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
+          onClick={(e) => {
+            onClick?.(e);
+            handleHashClick(e, href);
+          }}
         >
           {icon}
           {children}
@@ -76,16 +75,16 @@ export default function Button(props: ButtonProps) {
     }
 
     return (
-      <Link href={href} className={classes} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <Link href={href} {...rest} className={classes} onClick={onClick}>
         {icon}
         {children}
       </Link>
     );
   }
 
-  const { type = "button", ...rest } = props as ButtonAsButton;
+  const { type = "button", ...rest } = domProps as Omit<ButtonAsButton, keyof CommonProps>;
   return (
-    <button type={type} className={classes} {...rest}>
+    <button type={type} {...rest} className={classes}>
       {icon}
       {children}
     </button>
