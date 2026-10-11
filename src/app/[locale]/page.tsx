@@ -34,8 +34,8 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       <Testimonials content={content} />
       <WhyRenaskah content={content} />
       <Pricing content={content} />
-      <HowItWorks content={content} />
       <QuoteForm content={content} />
+      <HowItWorks content={content} />
       <Faq content={content} />
       <FinalCta content={content} />
     </>
