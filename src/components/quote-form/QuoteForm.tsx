@@ -8,6 +8,7 @@ import {
   buildWhatsAppLink,
 } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
+import Assurances from "@/components/ui/Assurances";
 import Field, { fieldInputClass } from "@/components/ui/Field";
 import HighlightedText from "@/components/ui/HighlightedText";
 import { ArrowRightIcon } from "@/components/ui/icons";
@@ -323,6 +324,8 @@ export default function QuoteForm({ content }: { content: SiteContent }) {
 
           <p className="mt-4 text-center text-xs text-ink-400">{qf.privacyNote}</p>
         </form>
+
+        <Assurances content={content.assurances} className="mx-auto mt-6 max-w-2xl" />
       </div>
     </section>
   );

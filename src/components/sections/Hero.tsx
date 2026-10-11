@@ -35,6 +35,13 @@ export default function Hero({ content }: { content: SiteContent }) {
               {content.hero.ctaSecondary}
             </Button>
           </div>
+
+          <figure className="mt-8 max-w-xl border-l-2 border-copper-300 pl-4">
+            <blockquote className="font-serif text-lg italic leading-snug text-ink-800">
+              &ldquo;{content.hero.proofQuote.text}&rdquo;
+            </blockquote>
+            <figcaption className="mt-1.5 text-xs font-medium text-ink-400">{content.hero.proofQuote.attribution}</figcaption>
+          </figure>
         </div>
 
         <div className="relative mx-auto w-full max-w-sm lg:max-w-none">

@@ -21,7 +21,8 @@ export type WhatsAppSource =
   | "footer"
   | "final-cta"
   | "borang-proofreading"
-  | "borang-formatting";
+  | "borang-formatting"
+  | "kalkulator";
 
 const REF_PATTERN = /\(Ref: web-([a-z-]+)\)/;
 

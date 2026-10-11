@@ -37,6 +37,8 @@ export interface HeroContent {
   ctaSecondary: string;
   visualBadge: string;
   whatsappPrefill: string;
+  /** One short, real client quote shown under the hero CTAs. */
+  proofQuote: { text: string; attribution: string };
 }
 
 export interface TrustBarContent {
@@ -184,6 +186,34 @@ export interface PricingContent {
   depositNote: string;
   urgentCaveat: string;
   currencyNote: string;
+  calculator: PriceCalculatorContent;
+}
+
+export interface PriceCalculatorContent {
+  title: string;
+  intro: string;
+  formattingTab: string;
+  proofreadingTab: string;
+  pagesLabel: string;
+  pagesPlaceholder: string;
+  wordsLabel: string;
+  wordsPlaceholder: string;
+  turnaroundLabel: string;
+  estimateLabel: string;
+  depositLabel: string;
+  emptyEstimate: string;
+  note: string;
+  ctaLabel: string;
+  /** Opening line of the WhatsApp message the calculator sends. */
+  whatsappIntro: string;
+  /** Labels for the lines of that message. */
+  messageLabels: { service: string; quantity: string; turnaround: string; estimate: string };
+}
+
+/** Short reassurance list shown next to the deposit note and the quote form. */
+export interface AssurancesContent {
+  title: string;
+  items: string[];
 }
 
 export interface HowItWorksStep {
@@ -279,6 +309,7 @@ export interface SiteContent {
   testimonials: TestimonialsContent;
   whyRenaskah: WhyRenaskahContent;
   pricing: PricingContent;
+  assurances: AssurancesContent;
   howItWorks: HowItWorksContent;
   quoteForm: QuoteFormContent;
   faq: FaqContent;

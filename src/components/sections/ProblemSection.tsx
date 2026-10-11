@@ -20,7 +20,8 @@ export default function ProblemSection({ content }: { content: SiteContent }) {
 
           <ul className="mt-10 max-w-2xl space-y-1 border-y border-border py-2">
             {problem.points.map((point, i) => (
-              <ScrollReveal key={point.keyword + i} delay={i * 90}>
+              // Mobile shows the first three; the full list returns from sm up.
+              <ScrollReveal key={point.keyword + i} delay={i * 90} className={i >= 3 ? "hidden sm:block" : ""}>
                 <li className="border-b border-border py-4 font-serif text-xl leading-snug text-ink-900 last:border-b-0 sm:text-2xl">
                   <HighlightedText line={point} />
                 </li>
