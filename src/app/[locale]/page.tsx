@@ -9,7 +9,6 @@ import ServiceSection from "@/components/sections/ServiceSection";
 import BeforeAfter from "@/components/sections/BeforeAfter";
 import UniversityExperience from "@/components/sections/UniversityExperience";
 import Testimonials from "@/components/sections/Testimonials";
-import WhyRenaskah from "@/components/sections/WhyRenaskah";
 import Pricing from "@/components/sections/Pricing";
 import HowItWorks from "@/components/sections/HowItWorks";
 import QuoteForm from "@/components/quote-form/QuoteForm";
@@ -32,7 +31,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       <BeforeAfter content={content} />
       <UniversityExperience content={content} />
       <Testimonials content={content} />
-      <WhyRenaskah content={content} />
       <Pricing content={content} />
       <QuoteForm content={content} />
       <HowItWorks content={content} />
