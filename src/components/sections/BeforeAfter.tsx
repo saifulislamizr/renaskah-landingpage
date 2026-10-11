@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { SiteContent } from "@/content/schema";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HighlightedText from "@/components/ui/HighlightedText";
-import { DocumentIcon, ChevronDownIcon } from "@/components/ui/icons";
+import { ChevronDownIcon } from "@/components/ui/icons";
 import PdfCompareSlider from "@/components/pdf-viewer/PdfCompareSlider";
 import PdfCompareViewer from "@/components/pdf-viewer/PdfCompareViewer";
 
@@ -14,7 +14,7 @@ export default function BeforeAfter({ content }: { content: SiteContent }) {
   const example = ba.examples[0];
 
   return (
-    <section id="before-after" className="scroll-mt-20 border-b border-border bg-paper-muted py-16 sm:py-24">
+    <section id="before-after" className="scroll-mt-20 border-b border-border bg-paper-muted py-12 sm:py-24">
       <div className="container-page">
         <SectionHeading
           eyebrow={ba.eyebrow}
@@ -23,7 +23,7 @@ export default function BeforeAfter({ content }: { content: SiteContent }) {
         />
 
         {example && (
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <PdfCompareSlider
               example={example}
               pages={ba.pages}
@@ -55,11 +55,6 @@ export default function BeforeAfter({ content }: { content: SiteContent }) {
             </div>
           </div>
         )}
-
-        <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-transparent p-6 text-center">
-          <DocumentIcon className="h-8 w-8 text-ink-300" />
-          <p className="mt-4 text-sm leading-relaxed text-ink-400">{ba.placeholderNote}</p>
-        </div>
       </div>
     </section>
   );

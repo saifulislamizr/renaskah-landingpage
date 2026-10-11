@@ -29,8 +29,8 @@ export default function ServiceSection({
       : { pill: "bg-copper-50 text-copper-700", chip: "border-copper-200 text-copper-700" };
 
   return (
-    <section id={content.id} className="scroll-mt-20 border-b border-border py-16 sm:py-24">
-      <div className="container-page grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+    <section id={content.id} className="scroll-mt-20 border-b border-border py-12 sm:py-24">
+      <div className="container-page grid gap-8 sm:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <div>
           <h2 className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink-950 sm:text-4xl">
             <HighlightedText line={content.headline} color={accent} />
@@ -40,7 +40,9 @@ export default function ServiceSection({
           </p>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-ink-500">{content.outcome}</p>
 
-          <div className="mt-6">
+          {/* The same document types repeat in both service sections and the
+              quote form dropdown, so phones skip them to save scroll. */}
+          <div className="mt-6 hidden sm:block">
             <h3 className="text-sm font-semibold text-ink-800">{content.tagsLabel}</h3>
             <div className="mt-2.5 flex flex-wrap gap-2">
               {tags.map((tag) => (
@@ -51,7 +53,7 @@ export default function ServiceSection({
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8">
             <Button href="#sebut-harga" variant="primary" size="lg">
               {content.ctaLabel}
             </Button>

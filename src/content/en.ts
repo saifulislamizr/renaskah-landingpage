@@ -179,7 +179,6 @@ export const en: SiteContent = {
         isRealSample: beforeAfterAsset.isRealSample,
       },
     ],
-    placeholderNote: "More before/after examples will be added here.",
     viewer: {
       loading: "Loading PDF…",
       error: "Couldn't load the PDF. Please try downloading the file directly.",

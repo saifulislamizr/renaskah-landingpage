@@ -156,7 +156,6 @@ export interface BeforeAfterContent {
   dragHandleLabel: string;
   fullViewerToggleLabel: string;
   examples: BeforeAfterExample[];
-  placeholderNote: string;
   viewer: PdfViewerChrome;
 }
 

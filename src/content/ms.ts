@@ -183,7 +183,6 @@ export const ms: SiteContent = {
         isRealSample: beforeAfterAsset.isRealSample,
       },
     ],
-    placeholderNote: "Lebih banyak contoh before/after akan ditambah di sini.",
     viewer: {
       loading: "Memuatkan PDF…",
       error: "Gagal memuatkan PDF. Sila cuba muat turun fail terus.",
