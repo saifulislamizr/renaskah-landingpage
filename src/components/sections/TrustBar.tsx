@@ -5,7 +5,7 @@ export default function TrustBar({ content }: { content: SiteContent }) {
   const { trustBar: t } = content;
 
   return (
-    <section className="border-b border-border bg-paper-muted">
+    <section className="bg-paper-muted">
       <div className="container-page py-7 sm:py-8">
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-center">
           <span className="text-sm font-medium text-ink-700 sm:text-base">{t.sinceLabel}</span>

@@ -14,7 +14,7 @@ export default function BeforeAfter({ content }: { content: SiteContent }) {
   const example = ba.examples[0];
 
   return (
-    <section id="before-after" className="scroll-mt-20 border-b border-border bg-paper-muted py-12 sm:py-24">
+    <section id="before-after" className="scroll-mt-20 bg-paper-muted py-12 sm:py-24">
       <div className="container-page">
         <SectionHeading
           eyebrow={ba.eyebrow}

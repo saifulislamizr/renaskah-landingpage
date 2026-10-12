@@ -184,7 +184,7 @@ export default function PdfCompareViewer({
       className={
         isFullscreen
           ? "flex h-full w-full flex-col bg-surface"
-          : "overflow-hidden rounded-2xl border border-border bg-surface"
+          : "overflow-hidden rounded-2xl bg-surface neu-raised"
       }
     >
       {/* Toolbar — shared by both panels/tabs */}

@@ -5,7 +5,7 @@ export default function UniversityExperience({ content }: { content: SiteContent
   const { universityExperience: u } = content;
 
   return (
-    <section className="border-b border-border bg-ink-950 py-16 text-white sm:py-20">
+    <section className="bg-ink-950 py-16 text-white sm:py-20">
       <div className="container-page">
         <div className="max-w-2xl">
           <h2 className="font-serif text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">

@@ -108,7 +108,7 @@ export default function QuoteForm({ content }: { content: SiteContent }) {
     "flex-1 rounded-xl px-4 py-3 text-center text-sm font-semibold transition-colors min-h-12";
 
   return (
-    <section id="sebut-harga" className="scroll-mt-20 border-b border-border bg-paper-muted py-16 sm:py-24">
+    <section id="sebut-harga" className="scroll-mt-20 bg-paper-muted py-16 sm:py-24">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink-950 sm:text-4xl">
@@ -120,11 +120,11 @@ export default function QuoteForm({ content }: { content: SiteContent }) {
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="mx-auto mt-10 max-w-2xl rounded-3xl border border-border bg-surface p-6 shadow-sm sm:p-8"
+          className="mx-auto mt-10 max-w-2xl rounded-3xl bg-surface p-6 neu-raised sm:p-8"
         >
           <fieldset>
             <legend className="mb-2 block text-sm font-medium text-ink-800">{qf.serviceToggleLabel}</legend>
-            <div role="tablist" className="flex gap-2 rounded-xl bg-paper-muted p-1.5">
+            <div role="tablist" className="flex gap-2 rounded-xl bg-paper-muted p-1.5 neu-inset-sm">
               <button
                 type="button"
                 role="tab"

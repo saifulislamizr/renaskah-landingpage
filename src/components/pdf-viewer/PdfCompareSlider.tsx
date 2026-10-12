@@ -128,7 +128,7 @@ export default function PdfCompareSlider({
 
       <div
         ref={setWrapperRef}
-        className="relative mx-auto max-w-2xl select-none overflow-hidden rounded-2xl border border-border bg-ink-950/[0.03]"
+        className="relative mx-auto max-w-2xl select-none overflow-hidden rounded-2xl bg-ink-950/[0.03] neu-inset"
       >
         {!docsReady && (
           <div className="flex aspect-[210/297] w-full items-center justify-center">

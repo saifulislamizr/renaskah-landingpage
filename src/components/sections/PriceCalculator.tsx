@@ -59,13 +59,13 @@ ${c.messageLabels.estimate}: ${formatRm(estimate)}`;
   const tabBase = "flex-1 rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition-colors min-h-11";
 
   return (
-    <div className="mx-auto mt-12 max-w-4xl rounded-3xl border border-border bg-surface p-6 shadow-sm sm:p-8">
+    <div className="mx-auto mt-12 max-w-4xl rounded-3xl bg-surface p-6 neu-raised sm:p-8">
       <h3 className="font-serif text-2xl font-semibold tracking-tight text-ink-950">{c.title}</h3>
       <p className="mt-1.5 text-sm text-ink-500">{c.intro}</p>
 
       <div className="mt-6 grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-end">
         <div className="space-y-4">
-          <div role="tablist" className="flex gap-2 rounded-xl bg-paper-muted p-1.5">
+          <div role="tablist" className="flex gap-2 rounded-xl bg-paper-muted p-1.5 neu-inset-sm">
             {(["formatting", "proofreading"] as const).map((s) => (
               <button
                 key={s}
@@ -116,7 +116,7 @@ ${c.messageLabels.estimate}: ${formatRm(estimate)}`;
           </div>
         </div>
 
-        <div className="rounded-2xl bg-paper-muted p-5" aria-live="polite">
+        <div className="rounded-2xl bg-paper-muted p-5 neu-inset" aria-live="polite">
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-400">{c.estimateLabel}</p>
           {hasEstimate ? (
             <>

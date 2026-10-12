@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export const fieldInputClass =
-  "w-full min-h-12 rounded-xl border border-ink-900/15 bg-surface px-4 text-base text-ink-900 placeholder:text-ink-300 transition-colors focus:border-copper-500 focus:outline-none focus:ring-2 focus:ring-copper-500/20 aria-[invalid=true]:border-red-400";
+  "w-full min-h-12 rounded-xl border border-transparent bg-surface px-4 neu-inset-sm text-base text-ink-900 placeholder:text-ink-400 transition-colors focus:border-copper-500 focus:outline-none focus:ring-2 focus:ring-copper-500/20 aria-[invalid=true]:border-red-400";
 
 export default function Field({
   id,

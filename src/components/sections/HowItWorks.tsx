@@ -6,7 +6,7 @@ export default function HowItWorks({ content }: { content: SiteContent }) {
   const { howItWorks: h } = content;
 
   return (
-    <section id="cara-kerja" className="scroll-mt-20 border-b border-border bg-paper-muted py-16 sm:py-24">
+    <section id="cara-kerja" className="scroll-mt-20 bg-paper-muted py-16 sm:py-24">
       <div className="container-page">
         <SectionHeading title={<HighlightedText line={h.title} />} intro={h.intro} align="center" />
 

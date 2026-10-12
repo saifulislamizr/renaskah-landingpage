@@ -17,7 +17,7 @@ export default function LanguageSwitcher({
   const rest = pathname.split("/").slice(2).join("/");
 
   return (
-    <div className={`flex items-center gap-1 rounded-full border border-ink-900/15 p-1 text-sm ${className}`} aria-label={label}>
+    <div className={`flex items-center gap-1 rounded-full p-1 neu-inset-sm text-sm ${className}`} aria-label={label}>
       {locales.map((l) => {
         const href = `/${l}${rest ? `/${rest}` : ""}`;
         const active = l === locale;

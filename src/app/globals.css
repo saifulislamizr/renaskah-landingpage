@@ -9,10 +9,14 @@
    --------------------------------------------------------------- */
 :root {
   /* Surfaces */
-  --color-paper: #fefdfb;
-  --color-paper-muted: #faf8f4;
-  --color-surface: #ffffff;
-  --color-border: #e7e2d9;
+  /* Neumorphic base: page, sections and cards share one warm tone and
+     are separated by light/dark shadow pairs instead of borders. */
+  --color-paper: #ede8e1;
+  --color-paper-muted: #ede8e1;
+  --color-surface: #ede8e1;
+  --color-border: #d9d1c5;
+  --neu-light: rgba(255, 255, 255, 0.85);
+  --neu-dark: rgba(170, 155, 135, 0.5);
 
   /* Ink / navy neutral (text, footer, dark sections) */
   --color-ink-950: #12141c;
@@ -20,7 +24,7 @@
   --color-ink-800: #262c3d;
   --color-ink-700: #3a4256;
   --color-ink-500: #5c6478;
-  --color-ink-400: #7c8394;
+  --color-ink-400: #5f6678; /* darkened so small text keeps 4.5:1 on the neumorphic base */
   --color-ink-300: #a8adb9;
 
   /* Copper accent, sampled from the master logo file (provisional
@@ -115,6 +119,24 @@
       transform: translateY(0);
     }
   }
+}
+
+/* ---------------------------------------------------------------
+   Neumorphism. "raised" surfaces float out of the base, "inset"
+   surfaces (inputs, wells) are pressed into it. Defined with @utility
+   so hover:/active: variants work on them.
+   --------------------------------------------------------------- */
+@utility neu-raised {
+  box-shadow: 9px 9px 18px var(--neu-dark), -9px -9px 18px var(--neu-light);
+}
+@utility neu-raised-sm {
+  box-shadow: 5px 5px 10px var(--neu-dark), -5px -5px 10px var(--neu-light);
+}
+@utility neu-inset {
+  box-shadow: inset 6px 6px 12px var(--neu-dark), inset -6px -6px 12px var(--neu-light);
+}
+@utility neu-inset-sm {
+  box-shadow: inset 3px 3px 6px var(--neu-dark), inset -3px -3px 6px var(--neu-light);
 }
 
 /* ---------------------------------------------------------------

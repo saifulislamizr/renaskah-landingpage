@@ -10,7 +10,7 @@ export default function Pricing({ content }: { content: SiteContent }) {
   const { pricing } = content;
 
   return (
-    <section id="harga" className="scroll-mt-20 border-b border-border py-16 sm:py-24">
+    <section id="harga" className="scroll-mt-20 py-16 sm:py-24">
       <div className="container-page">
         <SectionHeading eyebrow={pricing.eyebrow} title={<HighlightedText line={pricing.title} />} intro={pricing.intro} align="center" />
 

@@ -26,7 +26,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
   }
 
   return (
-    <section id="testimoni" className="scroll-mt-20 border-b border-border py-16 sm:py-24">
+    <section id="testimoni" className="scroll-mt-20 py-16 sm:py-24">
       <div className="container-page">
         <SectionHeading eyebrow={t.eyebrow} title={<HighlightedText line={why.title} />} intro={why.intro} />
 
@@ -43,7 +43,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
               type="button"
               onClick={() => scrollByCard(-1)}
               aria-label="Previous"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink-700 hover:bg-ink-900/5"
+              className="flex h-11 w-11 items-center justify-center rounded-full text-ink-700 neu-raised-sm hover:text-copper-600 active:neu-inset-sm"
             >
               <ChevronLeftIcon className="h-5 w-5" />
             </button>
@@ -51,7 +51,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
               type="button"
               onClick={() => scrollByCard(1)}
               aria-label="Next"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink-700 hover:bg-ink-900/5"
+              className="flex h-11 w-11 items-center justify-center rounded-full text-ink-700 neu-raised-sm hover:text-copper-600 active:neu-inset-sm"
             >
               <ChevronRightIcon className="h-5 w-5" />
             </button>
@@ -60,7 +60,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
 
         <div
           ref={scrollerRef}
-          className="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="-mx-3 mt-6 flex snap-x snap-mandatory scroll-px-3 gap-5 overflow-x-auto px-3 py-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {t.items.map((item, i) => (
             <ScrollReveal
@@ -68,7 +68,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
               delay={Math.min(i, 4) * 80}
               className="w-[78%] shrink-0 snap-start sm:w-[42%] lg:w-[27%]"
             >
-              <figure data-card className="overflow-hidden rounded-2xl border border-border bg-surface">
+              <figure data-card className="overflow-hidden rounded-2xl bg-surface p-2 neu-raised">
                 <Image
                   src={item.src}
                   alt={t.imageAlt}

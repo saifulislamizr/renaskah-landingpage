@@ -9,7 +9,7 @@ export default function ProblemSection({ content }: { content: SiteContent }) {
   const { problem } = content;
 
   return (
-    <section className="border-b border-border py-16 sm:py-24">
+    <section className="py-16 sm:py-24">
       <div className="container-page grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12">
         <div>
           <SectionHeading
@@ -37,7 +37,7 @@ export default function ProblemSection({ content }: { content: SiteContent }) {
         </div>
 
         <SlideReveal direction="right" className="order-first lg:order-none">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border bg-surface shadow-[0_20px_60px_-15px_rgba(20,20,30,0.15)]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-surface neu-raised">
             <Image
               src="/images/editorial/problem-visual.jpg"
               alt=""

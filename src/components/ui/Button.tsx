@@ -11,9 +11,9 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper-500 disabled:opacity-50 disabled:pointer-events-none";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-copper-500 text-white hover:bg-copper-600 active:bg-copper-700",
-  secondary: "bg-transparent text-ink-900 border border-ink-900/20 hover:border-ink-900/40 hover:bg-ink-900/[0.03]",
-  whatsapp: "bg-whatsapp text-white hover:bg-whatsapp-dark",
+  primary: "bg-copper-500 text-white neu-raised-sm hover:bg-copper-600 active:bg-copper-700 active:shadow-none",
+  secondary: "bg-surface text-ink-900 neu-raised-sm hover:text-copper-600 active:neu-inset-sm",
+  whatsapp: "bg-whatsapp text-white neu-raised-sm hover:bg-whatsapp-dark active:shadow-none",
   ghost: "bg-transparent text-ink-700 hover:text-ink-900",
   outlineLight: "bg-transparent text-white border border-white/25 hover:bg-white/10",
 };

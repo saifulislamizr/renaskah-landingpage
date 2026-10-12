@@ -21,7 +21,7 @@ export default function PricingTableCombined({ pricing }: { pricing: PricingCont
   ] as const;
 
   return (
-    <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-surface">
+    <div className="mt-8 overflow-hidden rounded-2xl bg-surface neu-raised">
       <div className="grid grid-cols-[1fr_1fr_1fr] gap-2 bg-ink-950 px-4 py-3 text-white">
         <span className="text-xs font-semibold uppercase tracking-wide text-white/70">{formatting.turnaroundLabel}</span>
         <span className="text-right">

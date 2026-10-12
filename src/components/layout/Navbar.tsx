@@ -21,7 +21,7 @@ export default function Navbar({ locale, content }: { locale: Locale; content: S
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
+    <header className="sticky top-0 z-50 bg-paper/90 shadow-[0_6px_14px_-8px_var(--neu-dark)] backdrop-blur supports-[backdrop-filter]:bg-paper/80">
       <nav className="container-page flex h-16 items-center justify-between gap-6 sm:h-20 lg:gap-4 xl:gap-10" aria-label="Main">
         <Link href={`/${locale}`} prefetch={false} className="flex shrink-0 items-center">
           <Image

@@ -29,7 +29,7 @@ export default function ServiceSection({
       : { pill: "bg-copper-50 text-copper-700", chip: "border-copper-200 text-copper-700" };
 
   return (
-    <section id={content.id} className="scroll-mt-20 border-b border-border py-12 sm:py-24">
+    <section id={content.id} className="scroll-mt-20 py-12 sm:py-24">
       <div className="container-page grid gap-8 sm:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <div>
           <h2 className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink-950 sm:text-4xl">
@@ -46,7 +46,7 @@ export default function ServiceSection({
             <h3 className="text-sm font-semibold text-ink-800">{content.tagsLabel}</h3>
             <div className="mt-2.5 flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <span key={tag} className={`rounded-full border bg-surface px-3 py-1 text-xs font-medium ${accentClasses.chip}`}>
+                <span key={tag} className={`rounded-full bg-surface px-3 py-1 text-xs font-medium neu-raised-sm ${accentClasses.chip}`}>
                   {tag}
                 </span>
               ))}
@@ -60,7 +60,7 @@ export default function ServiceSection({
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-surface">
+        <div className="rounded-2xl bg-surface neu-raised">
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -90,7 +90,7 @@ export default function ServiceSection({
                     <h4 className="text-sm font-semibold text-ink-800">{content.extraTitle}</h4>
                     <div className="mt-2.5 flex flex-wrap gap-2">
                       {content.extraItems.map((item) => (
-                        <span key={item} className="rounded-full border border-border bg-paper-muted px-3 py-1 text-xs font-medium text-ink-700">
+                        <span key={item} className="rounded-full bg-paper-muted px-3 py-1 neu-inset-sm text-xs font-medium text-ink-700">
                           {item}
                         </span>
                       ))}

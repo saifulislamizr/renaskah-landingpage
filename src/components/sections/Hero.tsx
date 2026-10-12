@@ -8,7 +8,7 @@ import { ArrowRightIcon, ChevronDownIcon, ChevronRightIcon } from "@/components/
 
 export default function Hero({ content }: { content: SiteContent }) {
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section className="relative overflow-hidden">
       {/* Subtle brand watermark, the logo's ink identity used sparingly, not scattered */}
       <Image
         src="/images/logo/renaskah-monogram.png"
@@ -45,7 +45,7 @@ export default function Hero({ content }: { content: SiteContent }) {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-          <div className="relative rounded-3xl border border-border bg-surface p-8 shadow-[0_20px_60px_-15px_rgba(20,20,30,0.15)] sm:p-10">
+          <div className="relative rounded-3xl bg-surface p-8 neu-raised sm:p-10">
             <SlideReveal direction="left">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
                 <Image

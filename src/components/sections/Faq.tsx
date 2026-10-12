@@ -10,7 +10,7 @@ export default function Faq({ content }: { content: SiteContent }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="scroll-mt-20 border-b border-border py-16 sm:py-24">
+    <section id="faq" className="scroll-mt-20 py-16 sm:py-24">
       <div className="container-page">
         <SectionHeading title={faq.title} />
 

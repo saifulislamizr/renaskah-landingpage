@@ -33,7 +33,7 @@ export default function PricingTable({
   const urgentRows = table.tiers.filter((t) => t.group === "urgent");
 
   return (
-    <div className={`overflow-hidden rounded-2xl border ${styles.border} bg-surface`}>
+    <div className={`overflow-hidden rounded-2xl bg-surface neu-raised`}>
       <div className={`${styles.header} px-6 py-6 text-white`}>
         <p className="text-sm font-semibold uppercase tracking-wide text-white/80">{table.serviceLabel}</p>
         <p className="mt-1 font-serif text-3xl font-bold tracking-tight sm:text-4xl">{table.unitLabel}</p>
